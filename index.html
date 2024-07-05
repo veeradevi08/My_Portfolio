@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.jpg" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi,I'm <span>velisetti</span><br>veera devi</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Hello! i'm veera devi,a engineering student specializing in data
+                         science.my journey in the world of technology has been fueled by 
+                         my passion for data,coding and creating innovative solutions. i enjoy
+                          in exploring data and building predictive models and i am also
+                           fascinated by the process of creating dynamic and responsive
+                            websites.</p>
+
+                    <div class="tab-tiles">
+                        <P class="tab-links active-link" onclick="opentab('skills')">Skills</P>
+                        <P class="tab-links" onclick="opentab('experience')">Experience</P>
+                        <P class="tab-links" onclick="opentab('education')">Education</P>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Data analysis with python</span><br>pandas,numpy</li>
+                            <li><span>webdevelopment</span><br>Html,CSS,Javascript</li>
+                            <li><span>SQL</span><br>database management</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>jun 2024-present</span><br>python developer at letsgrowmore</li>
+                            <li><span>jun 2024</span><br>data science intern at codsoft</li>
+                            <li><span>jan 2024-mar 2024</span><br>full stack developer intern at edzeeta</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-present</span><br>Btech at Aditya college of engineering and technology</li>
+                            <li><span>2020-2022</span><br>intermediate at narayana junior college</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------portfolio----------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Eventplanner360</h3>
+                        <p>created a user-friendly event planning website featuring intuitive navigation 
+                            ,event management tools, and responsive design</p>
+                        <a href="https://github.com/veeradevi08/CBTC"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Stock visualization dashboard</h3>
+                        <p>developed an interactive web dashboard for real-time stock data visualization.
+                        </p>
+                        <a href="https://github.com/veeradevi08/stock-visualization-dashboard"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>amazon product review</h3>
+                        <p>implemented a web application to scrape and analyse amazon product review,utilizing 
+                            natural language processing to extract insights and display results</p>
+                        <a href="https://github.com/veeradevi08/Amazon_product_review"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">see more</a>
+        </div>
+    </div>
+    <!-----------contact----------->
+    <div id="contact">
+        <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub title">Contact me</h1>
+                <p>velisettiveeradevi@gmail.com</p>
+                <P>7989221534</P>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/veera-devi-velisetti-42557128b"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/veeradevi08"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+                <a href="images/my Resume 2024.pdf" download class="btn btn2">Download cv</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="your name" required>
+                    <input type="email" name="Email" placeholder="your email" required>
+                    <textarea name="Message" rows="6" placeholder="your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tablink.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzYgxIWOxyDdP9EEyyngItisEe7rnVDS3jkX0v08OM_6nhG9kvTjx8sMUmjUWsDr6E7sA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "message sent succesfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
